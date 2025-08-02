@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blood Bank Management System</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+<div class="container">
+
+    <!-- Login -->
+    <div id="login-section">
+      <img src="https://www.pngitem.com/pimgs/m/297-2971282_blood-donation-png-photos-blood-donation-blood-drop.png" alt="Blood Drop" width="150" style="margin-bottom: 13px; display: block; margin-left: auto; margin-right: auto;"/>
+      <h2>Blood Bank Login</h2>
+      <div class="form-group">
+        <label>User ID</label>
+        <input type="text" id="loginId" placeholder="Enter your ID">
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="loginPassword" placeholder="Enter password">
+      </div>
+      <button onclick="login()">Login</button>
+    </div>
+
+    <!-- System Section -->
+    <div id="system-section" class="hidden">
+      <h2>Donor Management</h2>
+      
+      <div class="form-group">
+        <label>Donor Name</label>
+        <input type="text" id="name" placeholder="Full Name">
+      </div>
+      <div class="form-group">
+        <label>Blood Group</label>
+        <select id="bloodGroup">
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB-</option>
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Contact Number</label>
+        <input type="text" id="contact" placeholder="e.g. 9876543210">
+      </div>
+
+      <button onclick="addDonor()">Add Donor</button>
+
+      <div class="form-group">
+        <label>Search by Blood Group</label>
+        <input type="text" id="searchGroup" placeholder="e.g. A+">
+      </div>
+      <button onclick="searchDonor()">Search</button>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Blood Group</th>
+            <th>Contact</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="donorTableBody"></tbody>
+      </table>
+
+      <h3>Nearby Hospitals</h3>
+      <div id="hospitalList"></div>
+    </div>
+  </div>
+
+  
+  <script src="script.js"></script>
+</body>
+</html>
